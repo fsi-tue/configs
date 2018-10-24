@@ -1,0 +1,38 @@
+# Disable automatic overwriting of this file
+# Use 1 if you want to modify it via wpa_cli or wpa_gui
+update_config=0
+
+# Create a control interface for wpa_cli, wpa_gui, etc.
+ctrl_interface=/run/wpa_supplicant
+# ctrl_interface_group=wheel #(optional if you want to use wpa_cli or wpa_gui as non-root user)
+
+# Use the new IEEE 802.1X/EAPOL version (not compatible with all APs, but should be fine)
+eapol_version=2
+
+# Let wpa_supplicant initiate scanning and take care of AP selection (not the driver)
+ap_scan=1
+
+# We're operating in Germany
+country=DE
+
+# Rescan every 30 seconds when in the disconnected or inactive state
+autoscan=periodic:30
+
+# There's no need for peer-to-peer functionality
+p2p_disabled=1
+
+network={
+  ssid="eduroam"
+  proto=RSN
+  key_mgmt=WPA-EAP
+  auth_alg=OPEN
+  pairwise=CCMP
+  group=CCMP TKIP
+  ca_cert="/etc/ssl/certs/T-TeleSec_GlobalRoot_Class_2.pem"
+  altsubject_match="DNS:u-002-sias01.uni-tuebingen.de;DNS:u-002-sias02.uni-tuebingen.de"
+  eap=PEAP
+  phase1="peapver=0"
+  phase2="auth=MSCHAPV2"
+  identity="<LOGINNAME>@uni-tuebingen.de"
+  password="<YOURPASSWORD>"
+}

@@ -1,0 +1,21 @@
+Description='eduroam'
+Connection='wireless'
+Interface=<Interface e.g. wlp3s0 (see "ip a" or "ifconfig")>
+Security='wpa-configsection'
+IP='dhcp'
+TimeoutWPA=30
+WPAConfigSection=(
+  'ssid="eduroam"'
+  'proto=RSN'
+  'key_mgmt=WPA-EAP'
+  'auth_alg=OPEN'
+  'pairwise=CCMP'
+  'group=CCMP TKIP'
+  'ca_cert="/etc/ssl/certs/T-TeleSec_GlobalRoot_Class_2.pem"'
+  'altsubject_match="DNS:u-002-sias01.uni-tuebingen.de;DNS:u-002-sias02.uni-tuebingen.de"'
+  'eap=PEAP'
+  'phase1="peapver=0"'
+  'phase2="auth=MSCHAPV2"'
+  'identity="<LOGINNAME>@uni-tuebingen.de"'
+  'password="<YOURPASSWORD>"'
+)
