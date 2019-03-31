@@ -1,0 +1,23 @@
+# Location: ~/.muttrc, ~/.neomuttrc, $XDG_CONFIG_HOME/mutt/muttrc, or $XDG_CONFIG_HOME/neomutt/neomuttrc
+# Warning/TODO: This is only a minimal example!
+
+# TODO: Mail setup:
+set folder       = ~/.mail
+set mbox_type    = Maildir
+
+# TODO: Uni account:
+set realname="John Doe"
+set from="john.doe@student.uni-tuebingen.de"
+set use_from=yes
+set envelope_from=yes
+# TODO: Point sendmail to msmtpq if you're using msmtp:
+set sendmail="/usr/bin/msmtpq" # or: "/usr/bin/msmtpq -a uni"
+set sendmail_wait=-1
+
+set header_cache     = ~/.cache/mutt/headers_uni
+set folder    = ~/.mail/uni
+unmailboxes *
+mailboxes `find ~/.mail/uni -type d -name cur -printf '"%h" '`
+
+set spoolfile="=Inbox"
+set record="=Mail.sent"

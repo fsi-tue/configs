@@ -1,0 +1,38 @@
+# Location: ~/.mbsyncrc
+
+# ------------------------------------------------------------------------------
+# Begin uni
+# ------------------------------------------------------------------------------
+IMAPAccount uni-account
+  Host mailserv.uni-tuebingen.de
+  Port 993
+  SSLType IMAPS
+  SSLVersions TLSv1.2
+  User zxmXXXX # TODO: Your ZDV username (zxm...)
+  Pass hunter2 # TODO: Your password
+  # Or use PassCmd, e.g.:
+  #PassCmd "cat ~/.config/passwords/uni"
+
+IMAPStore uni-remote
+  Account uni-account
+
+# TODO: Depends on your setup:
+MaildirStore uni-local
+  Path ~/.mail/uni/
+  Inbox ~/.mail/uni/Inbox
+  Flatten .
+
+Channel uni-channel
+  Master :uni-remote:
+  Slave :uni-local:
+  Patterns *
+  Create Both
+  SyncState *
+  Expunge Both
+# ------------------------------------------------------------------------------
+# End uni
+# ------------------------------------------------------------------------------
+
+# Useful if you have multiple accounts:
+Group all
+  Channel uni-channel
