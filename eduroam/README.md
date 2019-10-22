@@ -1,7 +1,7 @@
 # eduroam
 
 Informationen zu `eduroam` an der Uni Tübingen finden sich
-[hier](https://uni-tuebingen.de/einrichtungen/zentrum-fuer-datenverarbeitung/dienstleistungen/netzdienste/netzzugang/roaming/eduroaming/).
+[hier](https://uni-tuebingen.de/de/13958).
 Dort gibt es auch Installationsanleitungen zu verschiedenen Plattformen.
 
 ## Details (WIP)
@@ -16,7 +16,7 @@ Anderswo wird häufig noch `TTLS-PAP` unterstützt und `TTLS-MSCHAPv2`
 ## netctl
 
 Die richtigen Einstellungen zu finden, damit `netctl` sich richtig mit eduroam
-verbindet, kann schwierig sein. [hier](./netctl) findet ihr eine
+verbindet, kann schwierig sein. [Hier](./netctl) findet ihr eine
 Beispiel-Konfiguration, die ihr unter `/etc/netctl/PROFILNAME` ablegt.
 Da `netctl` auf `wpa_supplicant` basiert kann man hier auch direkt auf eine
 `wpa_supplicant` Konfigurationsdatei verweisen: [eduroam](./wpa_supplicant).
