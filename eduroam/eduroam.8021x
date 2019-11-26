@@ -1,0 +1,20 @@
+# State: WIP (should be correct but doesn't work yet)
+# TODO: Update EAP-Identity, EAP-PEAP-Phase2-Identity, and EAP-PEAP-Phase2-Password
+# Location: /var/lib/iwd/eduroam.8021x
+# This configuration should be correct but currently (2019-11-26, Linux 5.3.11)
+# it still results in the following errors (reason 15 should mean the following:
+# CHALLENGE_FAILURE: Authentication rejected because of challenge failure.):
+# PEAP: Tunnel has disconnected with alert: close_notify
+# 4-Way handshake failed for ifindex: 8, reason: 15
+
+[Security]
+EAP-Method=PEAP
+EAP-Identity=zxmTODO@uni-tuebingen.de
+EAP-PEAP-CACert=/etc/ssl/certs/T-TeleSec_GlobalRoot_Class_2.pem
+EAP-PEAP-ServerDomainMask=u-002-sias01.uni-tuebingen.de;u-002-sias02.uni-tuebingen.de
+EAP-PEAP-Phase2-Method=MSCHAPV2
+EAP-PEAP-Phase2-Identity=zxmTODO@uni-tuebingen.de
+EAP-PEAP-Phase2-Password=TODO
+
+[Settings]
+AutoConnect=true

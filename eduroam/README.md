@@ -27,6 +27,18 @@ Folgende Beispielkonfiguration kann als Vorlage verwendet werden und bei Bedarf
 auch um weitere `network={...}`-Sektionen erweitert werden:
 [eduroam.conf](./wpa_supplicant).
 
+## iwd (WIP)
+
+Theoretisch sollte folgende Beispiel-Konfiguration für `iwd` funktionieren:
+[eduroam.8021x](./eduroam.8021x).
+
+Beim letzten Test mit `iwd` 1.1 und Linux Kernel 5.3 kam es jedoch zu folgenden
+Fehlermeldungen:
+```
+PEAP: Tunnel has disconnected with alert: close_notify
+4-Way handshake failed for ifindex: 10, reason: 15
+```
+
 ## Android
 
 ### TeleSec Zertifikat importieren
